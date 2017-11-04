@@ -1,11 +1,11 @@
 window.addEventListener('load',slider);
-document.getElementById('menu-open').addEventListener('click',function(){
+/*document.getElementById('menu-open').addEventListener('click',function(){
   menuShow();
 });
-document.getElementById('menu-close').addEventListener('click',menuHide);
+document.getElementById('menu-close').addEventListener('click',menuHide);*/
 
 /* FULL WIDTH MENU POCETAK*/
-function menuShow(){
+/*function menuShow(){
   var menu=document.getElementById('menu');
   menu.style.width="100%";
   document.getElementById('menu-open').style.display='none';
@@ -17,8 +17,16 @@ function menuHide(){
   setTimeout(function(){
     document.getElementById('menu-open').style.display='inline-block';
   },1400);
+}*/
 
+function myFunction(x) {
+    x.classList.toggle("change");
+    document.getElementById('menu').classList.toggle('menu-show');
 }
+
+document.getElementById('cont').addEventListener('click',function(){
+  myFunction(this);
+})
 
 /*MENU KRAJ*/
 
