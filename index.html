@@ -3,11 +3,12 @@
   <head>
     <link rel="icon" href="images/other/icon.png">
     <link <link href="https://fonts.googleapis.com/css?family=Buda:300" rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="lightbox\lightbox2-master\dist\css\lightbox.css" rel="stylesheet">
     <meta charset="utf-8">
-    <title>Landing Page | Index</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page | Index</title>
   </head>
   <body>
    <header>
@@ -15,26 +16,41 @@
         <div id="logo">
           <a href="#"><img src="images/other/logo.png"></a>
         </div>
-        <nav>
-          <span id="menu-open">&#9776;</span>
-          <div id="menu">
-            <a href="javascript:void(0)" class="menu-close" id="menu-close">x</a>
-            <div class="menu-cover">
-
-            </div>
-            <div class="menu-content">
-
-              <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">About</a></li>
-              </ul>
-            </div>
+        <div class="nav">
+          <!--<span id="menu-open"><i class="fa fa-align-right"></i></span>-->
+          <div class="container" id="cont">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
           </div>
-        </nav>
+        </div>
       </div>
     </header>
+
+    <div id="menu" class='menu-hide flex-row'>
+      <!--<a href="javascript:void(0)" class="menu-close" id="menu-close"><i class="fa fa-arrow-right" style="font-size:36px"></i></a>-->
+      <div class="menu-cover">
+        <img src='images/other/menu-cover.jpg'>
+      </div>
+      <div class="menu-content" id="menu-content">
+
+        <ul class='nav-links'>
+          <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <div class="info">
+          <span style="font-weight:bold;">PHONE:</span> 704-385-1562<br/>
+            <span style="font-weight:bold;">EMAIL:</span> concordia@gmail.com
+        </div>
+        <div class="social">
+          <span><a href="#"><i class="fa fa-instagram" style="font-size:36px"></i></a></span>
+          <span><a href="3#"><i class="fa fa-facebook-square" style="font-size:36px"></i></a></span>
+          <span><a href="#"><i class="fa fa-youtube" style="font-size:36px"></i></a></span>
+        </div>
+      </div>
+    </div>
 
     <div class="cover flex-row">
       <div class="cover-left">
