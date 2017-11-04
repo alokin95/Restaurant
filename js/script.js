@@ -1,0 +1,53 @@
+window.addEventListener('load',slider);
+document.getElementById('menu-open').addEventListener('click',function(){
+  menuShow();
+});
+document.getElementById('menu-close').addEventListener('click',menuHide);
+
+/* FULL WIDTH MENU POCETAK*/
+function menuShow(){
+  var menu=document.getElementById('menu');
+  menu.style.width="100%";
+  document.getElementById('menu-open').style.display='none';
+}
+
+function menuHide(){
+  var menu=document.getElementById('menu');
+  menu.style.width="0%";
+  setTimeout(function(){
+    document.getElementById('menu-open').style.display='inline-block';
+  },1400);
+
+}
+
+/*MENU KRAJ*/
+
+/* SLAJDER POCETAK*/
+var slideCount = 0;
+
+function slider() {
+
+    var slides = document.getElementsByClassName("slider-img");
+
+    for (var i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+
+    slideCount++;
+
+    if (slideCount > slides.length) {
+      slideCount = 1;
+    }
+
+    slides[slideCount-1].style.display = "block";
+    setTimeout(slider, 4000);
+}
+/*SLAJDER KRAJ*/
+
+
+
+
+/* ZA FORMU DATUM*/
+var dateControl = document.querySelector('input[type="date"]');
+var date=new Date();
+/*KRAJ*/
