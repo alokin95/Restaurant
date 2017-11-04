@@ -18,7 +18,7 @@ header {
   width: 100%;
   background-color: white;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
 }
 
 #head {
@@ -34,13 +34,13 @@ header {
   margin-left: 5%;
 }
 
-nav {
+.nav {
   flex:4;
   text-align: right;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
-nav span {
+.nav span {
   font-size: 2rem;
   cursor: pointer;
   margin-right: 5%;
@@ -48,17 +48,24 @@ nav span {
 
 #menu {
   height: 100%;
-  width:0;
   position: fixed;
   top:0;
   right:0;
   overflow: hidden;
   transition: 1.5s;
   background-color: white;
-  opacity: 0.8;
-  z-index: 1;
+  z-index: 2;
+  font-style: italic;
+  font-weight: 900;
 }
 
+.menu-hide {
+  width:0;
+}
+
+.menu-show {
+  width:100%;
+}
 
 .menu-cover {
   display: none;
@@ -67,26 +74,51 @@ nav span {
 .menu-content {
   width:100%;
   text-align: center;
+  overflow: hidden;
 }
 
 #menu ul {
   list-style: none;
-  margin-top: 20%;
+  margin-top: 40%;
   font-size: 2rem;
 }
 
 #menu li {
+  width:50%;
+  margin:0 auto;
+  text-align: right;
   padding:10px;
+  border-bottom: 1px solid;
+  border-collapse: collapse;
 }
 
 #menu a {
   text-decoration: none;
+  color:#46484d;
 }
 
 .menu-close {
   position: absolute;
   right: 5%;
+  top:10%;
   font-size: 3em;
+}
+
+.social{
+  margin-top: 10%;
+}
+
+.social a {
+  color:#46484d;
+  text-decoration: none;
+}
+
+.social span {
+  padding:20px;
+}
+
+.info {
+  margin-top: 10%;
 }
 
 .cover {
@@ -174,6 +206,7 @@ section {
   top: 40%;
   left: 20%;
   margin: auto;
+  z-index: 1;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
   -ms-transition: opacity 0.5s ease-in-out;
@@ -319,6 +352,15 @@ input {
 
 #head {
   width:90%;
+}
+
+.menu-cover {
+  display: inline-block;
+
+}
+
+.menu-cover img {
+  width: 100%;
 }
 
 .cover {
@@ -478,3 +520,33 @@ input[type="date"] {
 .enterier-img img { transition: all .2s ease-in-out; }
 .enterier-img img:hover { transform: scale(1.1); }
 /*KRAJ*/
+
+
+
+/* TEST*/
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
