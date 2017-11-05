@@ -31,13 +31,13 @@ document.getElementById('cont').addEventListener('click',function(){
 /*MENU KRAJ*/
 
 /* SLAJDER POCETAK*/
-var slideCount = 0;
+let slideCount = 0;
 
 function slider() {
 
-    var slides = document.getElementsByClassName("slider-img");
+    let slides = document.getElementsByClassName("slider-img");
 
-    for (var i = 0; i < slides.length; i++) {
+    for (let i = 0; i < slides.length; i++) {
        slides[i].style.display = "none";
     }
 
@@ -56,6 +56,8 @@ function slider() {
 
 
 /* ZA FORMU DATUM*/
-var dateControl = document.querySelector('input[type="date"]');
-var date=new Date();
+let dateControl = document.querySelector('input[type="date"]');
+let date=new Date();
+
+
 /*KRAJ*/

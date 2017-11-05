@@ -48,23 +48,23 @@ header {
 
 #menu {
   height: 100%;
+  width:100%;
   position: fixed;
   top:0;
   right:0;
-  overflow: hidden;
-  transition: 1.5s;
+  transition: 1s;
   background-color: white;
   z-index: 2;
   font-style: italic;
   font-weight: 900;
+  opacity: 0;
+  visibility: hidden;
 }
 
-.menu-hide {
-  width:0;
-}
 
 .menu-show {
-  width:100%;
+  opacity: 1 !important;
+	visibility: visible !important;
 }
 
 .menu-cover {
@@ -77,19 +77,17 @@ header {
   overflow: hidden;
 }
 
-#menu ul {
+.nav-links {
   list-style: none;
   margin-top: 40%;
   font-size: 2rem;
 }
 
-#menu li {
+.nav-links li {
   width:50%;
   margin:0 auto;
   text-align: right;
   padding:10px;
-  border-bottom: 1px solid;
-  border-collapse: collapse;
 }
 
 #menu a {
@@ -170,7 +168,6 @@ header {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-
 
 #description {
   padding:30px;
@@ -328,8 +325,7 @@ ul.leaders span + span {
   margin-top: 80px;
 }
 
-input {
-  width:100%;
+input, select {
   text-align: center;
   padding: .8125em 1em .8125em;
   height: 3em;
@@ -337,7 +333,20 @@ input {
   margin-bottom: 10px;
 }
 
+footer {
+  border-top: 1px solid #46484d;
+  height: 150px;
+  text-align: center;
+}
 
+footer .social {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
 
 /* POCETAK MEDIA QUERY //////////////////////////////////////*/
 
@@ -356,12 +365,36 @@ input {
 
 .menu-cover {
   display: inline-block;
+  flex:1;
+  padding:5%;
+}
 
+
+.menu-content {
+  flex:1;
+  padding:5%;
+}
+
+#menu a {
+  display: inline-block;
+  transition: 0.1s;
+}
+
+#menu a:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari */
+  transform: scale(1.1); /* Standard syntax */
+}
+
+.nav-links {
+  margin-top: 0;
 }
 
 .menu-cover img {
   width: 100%;
+  height: auto;
 }
+
 
 .cover {
   width: 100%;
@@ -474,6 +507,14 @@ input[type="text"], input[type="tel"], input[type="email"] {
 
 input[type="date"] {
   flex-basis:31%;
+}
+
+#time {
+  flex-basis: 15%;
+}
+
+#people {
+  flex-basis: 25%;
 }
 
 }
