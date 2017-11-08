@@ -333,6 +333,33 @@ input, select {
   margin-bottom: 10px;
 }
 
+/*INDEX END*/
+
+/*MENU START*/
+
+nav {
+  width:100%;
+  background-color: silver;
+  position: fixed;
+  margin-top:15%;
+  text-align: center;
+}
+
+nav ul {
+  margin: 0 auto;
+}
+
+nav li {
+  display: inline-block;
+  padding: 5px 50px 5px 50px;
+}
+
+.recipes {
+  min-height: 500px;
+}
+
+/*MENU END*/
+
 footer {
   border-top: 1px solid #46484d;
   height: 150px;
@@ -350,7 +377,7 @@ footer p {
 
 /* POCETAK MEDIA QUERY //////////////////////////////////////*/
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
 
 .flex-row{
   flex-direction: row;
