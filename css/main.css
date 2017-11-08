@@ -335,11 +335,11 @@ input, select {
 
 /*INDEX END*/
 
-/*MENU START*/
+/*menu.html START*/
 
 nav {
   width:100%;
-  background-color: silver;
+  background-color: #edeff1;
   position: fixed;
   margin-top:15%;
   text-align: center;
@@ -354,11 +354,15 @@ nav li {
   padding: 5px 50px 5px 50px;
 }
 
+button {
+	
+}
+
 .recipes {
   min-height: 500px;
 }
 
-/*MENU END*/
+/*menu.html END*/
 
 footer {
   border-top: 1px solid #46484d;
