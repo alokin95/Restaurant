@@ -311,7 +311,7 @@ ul.leaders span + span {
   margin-top: 10%;
   background-color: black;
   color:white;
-  padding:100px;
+  padding:50px;
   text-align: center;
   font-size:1.5rem;;
 }
@@ -332,37 +332,6 @@ input, select {
   font-size: 1rem;
   margin-bottom: 10px;
 }
-
-/*INDEX END*/
-
-/*menu.html START*/
-
-nav {
-  width:100%;
-  background-color: #edeff1;
-  position: fixed;
-  margin-top:15%;
-  text-align: center;
-}
-
-nav ul {
-  margin: 0 auto;
-}
-
-nav li {
-  display: inline-block;
-  padding: 5px 50px 5px 50px;
-}
-
-button {
-	
-}
-
-.recipes {
-  min-height: 500px;
-}
-
-/*menu.html END*/
 
 footer {
   border-top: 1px solid #46484d;
@@ -529,7 +498,8 @@ section {
 
 .working-hours {
   text-align: center;
-  font-size:2.5rem;;
+  font-size:2.5rem;
+  padding: 100px;
 }
 
 input[type="text"], input[type="tel"], input[type="email"] {

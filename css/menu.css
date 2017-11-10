@@ -1,0 +1,233 @@
+body {
+  font-family: 'Droid Serif', serif;
+  font-size: 20px;
+  color:#46484d;
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-row{
+  display: block;
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  z-index: 3;
+}
+
+#head {
+  width:100%;
+  height: 100%;
+  margin:0 auto;
+  display: flex;
+}
+
+#logo {
+  flex: 1;
+  padding: 10px 0px 0px 0px;
+  margin-left: 5%;
+}
+
+.nav {
+  flex:4;
+  text-align: right;
+  padding-top: 10px;
+}
+
+.nav span {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+#menu {
+  height: 100%;
+  width:100%;
+  position: fixed;
+  top:0;
+  right:0;
+  transition: 1s;
+  background-color: white;
+  z-index: 2;
+  font-style: italic;
+  font-weight: 900;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.menu-show {
+  opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.menu-cover {
+  display: none;
+}
+
+.menu-content {
+  width:100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.nav-links {
+  list-style: none;
+  margin-top: 40%;
+  font-size: 2rem;
+}
+
+.nav-links li {
+  width:50%;
+  margin:0 auto;
+  text-align: right;
+  padding:10px;
+}
+
+#menu a {
+  text-decoration: none;
+  color:#46484d;
+}
+
+.menu-close {
+  position: absolute;
+  right: 5%;
+  top:10%;
+  font-size: 3em;
+}
+
+.social{
+  margin-top: 10%;
+}
+
+.social a {
+  color:#46484d;
+  text-decoration: none;
+}
+
+.social span {
+  padding:20px;
+}
+
+.info {
+  margin-top: 10%;
+}
+
+main {
+  display: inline-block;
+  width: 100%;
+  margin-top: 15%;
+  padding: 15%;
+}
+
+section {
+  width: 100%;
+  font-family: 'Buda';
+  min-height: 500px;
+}
+
+footer {
+  border-top: 1px solid #46484d;
+  height: 150px;
+  text-align: center;
+}
+
+footer .social {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+/* POCETAK MEDIA QUERY //////////////////////////////////////*/
+
+@media screen and (min-width: 1024px) {
+
+  .flex-row{
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #head {
+    width:90%;
+  }
+
+  .menu-cover {
+    display: inline-block;
+    flex:1;
+    padding:5%;
+  }
+
+
+  .menu-content {
+    flex:1;
+    padding:5%;
+  }
+
+  #menu a {
+    display: inline-block;
+    transition: 0.1s;
+  }
+
+  #menu a:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .nav-links {
+    margin-top: 0;
+  }
+
+  .menu-cover img {
+    width: 100%;
+    height: auto;
+  }
+
+  main {
+    display: inline-block;
+    width: 100%;
+    margin-top: 5%;
+    padding: 10%;
+  }
+
+}
+
+
+/* TEST*/
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}

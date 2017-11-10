@@ -35,29 +35,22 @@ function slider() {
 
 
 
-
-/* ZA FORMU DATUM*/
-let dateControl = document.querySelector('input[type="date"]');
-let date=new Date();
-/*KRAJ*/
-
-
 /*DISHES AJAX*/
 
 function request(url,func){
-	
+
 	let xhttp=new XMLHttpRequest();
-	
+
 	if (!xhttp){
 		return false;
 	}
-	
+
 	xhttp.onreadystatechange=function(){
 		if (this.readyState === 4 && this.status===200){
 			func(this);
 		}
 	}
-	
+
 	xhttp.open("GET",url);
 	xhttp.send();
 }
