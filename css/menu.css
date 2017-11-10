@@ -130,6 +130,15 @@ section {
   width: 100%;
   font-family: 'Buda';
   min-height: 500px;
+  text-align: center;
+}
+
+.recipe {
+  margin-top: 20%;
+}
+
+.recipe h4 {
+  font-weight: bold;
 }
 
 footer {
@@ -201,6 +210,9 @@ footer p {
     padding: 10%;
   }
 
+  .recipe {
+    margin-top: 10%;
+  }
 }
 
 
