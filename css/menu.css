@@ -1,16 +1,16 @@
 body {
   font-family: 'Droid Serif', serif;
   font-size: 20px;
-  color:#46484d;
+  color: #46484d;
 }
 
 * {
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.flex-row{
+.flex-row {
   display: block;
 }
 
@@ -22,9 +22,9 @@ header {
 }
 
 #head {
-  width:100%;
+  width: 100%;
   height: 100%;
-  margin:0 auto;
+  margin: 0 auto;
   display: flex;
 }
 
@@ -35,7 +35,7 @@ header {
 }
 
 .nav {
-  flex:4;
+  flex: 4;
   text-align: right;
   padding-top: 10px;
 }
@@ -48,10 +48,10 @@ header {
 
 #menu {
   height: 100%;
-  width:100%;
+  width: 100%;
   position: fixed;
-  top:0;
-  right:0;
+  top: 0;
+  right: 0;
   transition: 1s;
   background-color: white;
   z-index: 2;
@@ -61,10 +61,9 @@ header {
   visibility: hidden;
 }
 
-
 .menu-show {
   opacity: 1 !important;
-	visibility: visible !important;
+  visibility: visible !important;
 }
 
 .menu-cover {
@@ -72,7 +71,7 @@ header {
 }
 
 .menu-content {
-  width:100%;
+  width: 100%;
   text-align: center;
   overflow: hidden;
 }
@@ -84,35 +83,35 @@ header {
 }
 
 .nav-links li {
-  width:50%;
-  margin:0 auto;
+  width: 50%;
+  margin: 0 auto;
   text-align: right;
-  padding:10px;
+  padding: 10px;
 }
 
 #menu a {
   text-decoration: none;
-  color:#46484d;
+  color: #46484d;
 }
 
 .menu-close {
   position: absolute;
   right: 5%;
-  top:10%;
+  top: 10%;
   font-size: 3em;
 }
 
-.social{
+.social {
   margin-top: 10%;
 }
 
 .social a {
-  color:#46484d;
+  color: #46484d;
   text-decoration: none;
 }
 
 .social span {
-  padding:20px;
+  padding: 20px;
 }
 
 .info {
@@ -123,10 +122,37 @@ main {
   display: inline-block;
   width: 100%;
   margin-top: 15%;
-  padding: 15%;
+}
+
+.links {
+  text-align: center;
+  background-color:#d3d6dc;
+}
+
+.links ul {
+  padding:20px;
+}
+
+.links li {
+  padding:15px;
+  display: block;
+}
+
+.links a {
+  text-decoration: none;
+  color:#46484d;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.links a:active {
+  text-decoration: underline;
 }
 
 section {
+  margin-top: 5%;
   width: 100%;
   font-family: 'Buda';
   min-height: 500px;
@@ -139,6 +165,18 @@ section {
 
 .recipe h4 {
   font-weight: bold;
+}
+
+.more {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+}
+
+.more a {
+  text-decoration: underline;
+  color:#46484d;
 }
 
 footer {
@@ -159,87 +197,85 @@ footer p {
 /* POCETAK MEDIA QUERY //////////////////////////////////////*/
 
 @media screen and (min-width: 1024px) {
-
-  .flex-row{
+  .flex-row {
     flex-direction: row;
     align-items: center;
     display: flex;
     justify-content: space-around;
   }
-
   #head {
-    width:90%;
+    width: 90%;
   }
-
   .menu-cover {
     display: inline-block;
-    flex:1;
-    padding:5%;
+    flex: 1;
+    padding: 5%;
   }
-
-
   .menu-content {
-    flex:1;
-    padding:5%;
+    flex: 1;
+    padding: 5%;
   }
-
   #menu a {
     display: inline-block;
     transition: 0.1s;
   }
-
   #menu a:hover {
     -ms-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
-
   .nav-links {
     margin-top: 0;
   }
-
   .menu-cover img {
     width: 100%;
     height: auto;
   }
-
   main {
     display: inline-block;
-    width: 100%;
     margin-top: 5%;
-    padding: 10%;
+  }
+  .links li {
+    padding:20px;
+    display: inline;
   }
 
+  .recipes {
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 50%;
+  }
   .recipe {
     margin-top: 10%;
   }
 }
 
-
 /* TEST*/
 
 .container {
-    display: inline-block;
-    cursor: pointer;
-    margin-right: 5%;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 5%;
 }
 
 .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
 }
 
 .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-    transform: rotate(-45deg) translate(-9px, 6px) ;
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar2 {
+  opacity: 0;
+}
 
 .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
