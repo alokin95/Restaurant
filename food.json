@@ -127,55 +127,55 @@
   },
   {
   "name": "Sandwich and Wrap Platter",
-  "desc": "Ham, turkey, roast beef, corned beef, salmon salad, tuna salad, grilled chicken, blackened chicken, chicken salad, eggplant, grilled vegetable & more. "
+  "desc": "Ham, turkey, roast beef, corned beef, salmon salad, tuna salad, grilled chicken, blackened chicken, chicken salad, eggplant, grilled vegetable & more"
   },
   {
   "name": "Hot Trays",
   "desc": "House-smoked ham, cheddar, pickles, spicy brown mustard"
   },
 {
- "name": "Roast Beef",
- "desc": "House-made roast beef, caramelized onions & our own blue cheese dressing on a soft roll"
+ "name": "Fried Chicken and Waffle",
+ "desc": "Half a fried chicken and a Belgian waffle topped with a sweet, strawberry butter and served with our signature sweet and spicy sauce."
 },
 {
-  "name": "Frittata",
-  "desc": "A delicious large Italian pecorino Romano cheese, parsley and egg omelet frittata over a salad that is dressed with our house balsamic vinaigrette and tomatoes"
+  "name": "The Bissell Breakfast",
+  "desc": "Two eggs any style, bacon, toast, hasbrowns or grits, and a short stack of pancakes"
   },
 {
-  "name": "Tomato & Red Onion Salad",
-  "desc": "Marinated tomatoes, balsamic, extra virgin olive oil, marinated red onions, and grilled baguette"
+  "name": "Corned Beef Hash",
+  "desc": "Corned beef, potatoes, onions, green and red bell peppers sautéed together, topped with 2 over easy eggs and served with one sausage link and toast"
   },
 {
-  "name": "Red and White Clams and Linguini",
-  "desc": "Parsons little neck clams simmered with fresh garlic, olive oil & fresh Italian parsley served on imported Italian linguini"
+  "name": "Italian Breakfast Sausage Sandwich",
+  "desc": "Spicy Italian Sausage, Hollandaise Sauce, Over easy egg and Provolone Cheese on Sourdough"
   },
 {
-    "name": "Crispy Fish Filet",
-    "desc": "Breaded fish of the day on a soft bun topped with creamy tartar sauce, slow roasted roma tomatoes, & lettuce"
+    "name": "Crunchy Italian nachos",
+    "desc": "Little raviolis stuffed with four cheeses & fried to perfection, served with arrabbiata"
   },
 {
-    "name": "Blackened Fish Sandwich",
-    "desc": "Fish of the day coated with Cajun seasonings and pan seared. Served on a bun with Cajun remoulade, lettuce and tomato"
+    "name": "Pumpkin arancini",
+    "desc": "Crispy fried rice balls with roasted pumpkin & pecorino, served with spiced cheese fonduta"
   },
 {
-    "name": "Black Bean Veggie Burger",
-    "desc": "Vegetarian black bean burger topped with sliced avocado, pico de gallo & cilantro crema"
+    "name": "Proscuitto salad",
+    "desc": "San Daniele prosciutto with a tangy celeriac & tarragon slaw & extra virgin olive oil"
   },
 {
-    "name": "Sirloin Burger",
-    "desc": "Cooked on an open flame served with romaine lettuce, tomato, red onion, cottage fries & pickle on an artisan baked soft bun "
+    "name": "Spicy Italian meatballs",
+    "desc": "Chilli-spiked free-range pork meatballs with tomato & basil sauce, Parmesan & toasted paysan"
   },
 {
-    "name": "Concordia Sagittaria Salad",
-    "desc": "Baby kale, spinach, arugula, artichoke hearts, heart of palm, cucumbers, goat cheese, fresh tomatoes & balsamic vinaigrette"
+    "name": "Smoked salmon bruschetta",
+    "desc": "Lowestoft hot-smoked salmon, horseradish, ricotta, bronze fennel & lemon"
   },
 {
-    "name": "Four Cheese Raviolis",
-    "desc": "Fresh pasta stuffed with ricotta, mozzarella, asiago & Pecorino Romano cheeses"
+    "name": "Tomato bruschetta",
+    "desc": "Slow-roasted cherry tomatoes, whipped ricotta, basil & extra virgin olive oil"
   },
 {
-    "name": "Crispy Pork",
-    "desc": "Crispy pork cutlet, sautéed spinach, roasted red peppers, balsamic on a soft bun"
+    "name": "Vegetarian",
+    "desc": "Chargrilled vegetables marinated in garlic & herb oil, with mini buffalo mozzarella, tomato & ricotta crostini, garlicky cannellini dip, grissini, pickles, olives & focaccia"
   }
 ]
 }]
