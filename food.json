@@ -1,0 +1,181 @@
+[
+  {
+"DINNER": [
+  {
+    "name": "Fried Calamari",
+    "desc": "Delicious, tender, crispy, & crunchy calamari served with mild or hot marinara sauce for dipping"
+  },
+  {
+    "name": "Fried Roman Artichokes",
+    "desc": "Crispy-fried baby artichokes with lemon and salsa verde"
+  },
+  {
+    "name": "Crab-Stuffed Jalapeño Popper",
+    "desc": "Fresh jalapeno peppers stuffed with lump crab meat & cheese, wrapped in bacon & smoked. Glazed with a tangy homemade BBQ sauce"
+  },
+{
+  "name": "Mamas Meatballs and Sausage",
+  "desc": "Our homemade meatballs are a delicious combination of ground beef, garlic, cheese & bread served with sweet Italian sausage simmered in Mamas meat sauce"
+},
+{
+    "name": "Grilled Bruschetta with Fig Jam, Gorgonzola cheese & Prosciutto",
+    "desc": "Baked artisan bread char-grilled topped with delicate fig jam, gorgonzola cheese & sliced prosciutto"
+  },
+{
+    "name": "Prince Edward Island Mussels",
+    "desc": "Fresh plump & juicy Canadian mussels simmered in a white wine, garlic, shallots & tomato sauce"
+  },
+{
+    "name": "Panini Bay House Special",
+    "desc": "Fresh crisp romaine lettuce served with our balsamic vinaigrette, pimento olives, plum tomatoes & red onion confit"
+  },
+{
+    "name": "Caesar Salad",
+    "desc": "Crisp romaine, our homemade Caesar dressing, crunchy croutons & parmigiana reggiano cheese"
+  },
+{
+    "name": "Baby Greens & Goat Cheese",
+    "desc": "Baby greens, creamy goat cheese, red onion confit & balsamic vinaigrette"
+  },
+{
+    "name": "Fresh Mozzarella and Tomato Salad",
+    "desc": "Chunks of fresh mozzarella, plum tomatoes, fresh basil, red onion confit & balsamic vinaigrette. Served with grilled crostini"
+  },
+{
+    "name": "Creamy Shrimp Linguine",
+    "desc": "Sautéed shrimp in a pink cream sauce flavored with white wine, prosciutto, shallots & parmesan cheese. Served over linguine pasta"
+  },
+{
+    "name": "Authentic Bolognese",
+    "desc": "Ground veal, pork & beef slowly simmered with white wine, prosciutto, onion, carrots, cream & parmigiana reggiano cheese"
+  },
+{
+    "name": "Mamas Meat Sauce or Marinara",
+    "desc": "Your choice of pasta with our deliciously rich slow simmered braised meat sauce or just marinara sauce. Dusted with pecorino romano cheese. Meat sauce 18 Marinara sauce"
+  },
+{
+    "name": "White or Red Clam Sauce",
+    "desc": "Fresh local little neck clams from Parsons seafood, simmered in extra virgin olive oil, white wine & garlic. Served over imported linguini pasta"
+  }
+]
+},
+  {
+  "LUNCH": [
+    {
+      "name": "California BLT",
+      "desc": "w/avocado, cucumber, arugula & tarragon mayo on multigrain bread"
+    },
+    {
+    "name": "House Smoked Turkey Breast",
+    "desc": "Panini Bay smoked turkey breast, crispy smoked bacon, creamy fontina cheese & mayo pressed with avocado slices"
+    },
+    {
+    "name": "Classic Ham",
+    "desc": "House-smoked ham, cheddar, pickles, spicy brown mustard"
+    },
+	{
+	 "name": "Roast Beef",
+	 "desc": "House-made roast beef, caramelized onions & our own blue cheese dressing on a soft roll"
+	},
+	{
+    "name": "Frittata",
+    "desc": "A delicious large Italian pecorino Romano cheese, parsley and egg omelet frittata over a salad that is dressed with our house balsamic vinaigrette and tomatoes"
+    },
+	{
+    "name": "Tomato & Red Onion Salad",
+    "desc": "Marinated tomatoes, balsamic, extra virgin olive oil, marinated red onions, and grilled baguette"
+    },
+	{
+    "name": "Red and White Clams and Linguini",
+    "desc": "Parsons little neck clams simmered with fresh garlic, olive oil & fresh Italian parsley served on imported Italian linguini"
+    },
+	{
+      "name": "Crispy Fish Filet",
+      "desc": "Breaded fish of the day on a soft bun topped with creamy tartar sauce, slow roasted roma tomatoes, & lettuce"
+    },
+	{
+      "name": "Blackened Fish Sandwich",
+      "desc": "Fish of the day coated with Cajun seasonings and pan seared. Served on a bun with Cajun remoulade, lettuce and tomato"
+    },
+	{
+      "name": "Black Bean Veggie Burger",
+      "desc": "Vegetarian black bean burger topped with sliced avocado, pico de gallo & cilantro crema"
+    },
+	{
+      "name": "Sirloin Burger",
+      "desc": "Cooked on an open flame served with romaine lettuce, tomato, red onion, cottage fries & pickle on an artisan baked soft bun "
+    },
+	{
+      "name": "Concordia Sagittaria Salad",
+      "desc": "Baby kale, spinach, arugula, artichoke hearts, heart of palm, cucumbers, goat cheese, fresh tomatoes & balsamic vinaigrette"
+    },
+	{
+      "name": "Four Cheese Raviolis",
+      "desc": "Fresh pasta stuffed with ricotta, mozzarella, asiago & Pecorino Romano cheeses"
+    },
+	{
+      "name": "Crispy Pork",
+      "desc": "Crispy pork cutlet, sautéed spinach, roasted red peppers, balsamic on a soft bun"
+    }
+  ]
+},
+{
+"CATERING": [
+  {
+    "name": "Antipasto tray",
+    "desc": "Salami, prosciutto, sharp provolone, fresh mozzarella, artichoke hearts, marinated peppers, olives"
+  },
+  {
+  "name": "Sandwich and Wrap Platter",
+  "desc": "Ham, turkey, roast beef, corned beef, salmon salad, tuna salad, grilled chicken, blackened chicken, chicken salad, eggplant, grilled vegetable & more. "
+  },
+  {
+  "name": "Hot Trays",
+  "desc": "House-smoked ham, cheddar, pickles, spicy brown mustard"
+  },
+{
+ "name": "Roast Beef",
+ "desc": "House-made roast beef, caramelized onions & our own blue cheese dressing on a soft roll"
+},
+{
+  "name": "Frittata",
+  "desc": "A delicious large Italian pecorino Romano cheese, parsley and egg omelet frittata over a salad that is dressed with our house balsamic vinaigrette and tomatoes"
+  },
+{
+  "name": "Tomato & Red Onion Salad",
+  "desc": "Marinated tomatoes, balsamic, extra virgin olive oil, marinated red onions, and grilled baguette"
+  },
+{
+  "name": "Red and White Clams and Linguini",
+  "desc": "Parsons little neck clams simmered with fresh garlic, olive oil & fresh Italian parsley served on imported Italian linguini"
+  },
+{
+    "name": "Crispy Fish Filet",
+    "desc": "Breaded fish of the day on a soft bun topped with creamy tartar sauce, slow roasted roma tomatoes, & lettuce"
+  },
+{
+    "name": "Blackened Fish Sandwich",
+    "desc": "Fish of the day coated with Cajun seasonings and pan seared. Served on a bun with Cajun remoulade, lettuce and tomato"
+  },
+{
+    "name": "Black Bean Veggie Burger",
+    "desc": "Vegetarian black bean burger topped with sliced avocado, pico de gallo & cilantro crema"
+  },
+{
+    "name": "Sirloin Burger",
+    "desc": "Cooked on an open flame served with romaine lettuce, tomato, red onion, cottage fries & pickle on an artisan baked soft bun "
+  },
+{
+    "name": "Concordia Sagittaria Salad",
+    "desc": "Baby kale, spinach, arugula, artichoke hearts, heart of palm, cucumbers, goat cheese, fresh tomatoes & balsamic vinaigrette"
+  },
+{
+    "name": "Four Cheese Raviolis",
+    "desc": "Fresh pasta stuffed with ricotta, mozzarella, asiago & Pecorino Romano cheeses"
+  },
+{
+    "name": "Crispy Pork",
+    "desc": "Crispy pork cutlet, sautéed spinach, roasted red peppers, balsamic on a soft bun"
+  }
+]
+}]

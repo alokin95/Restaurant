@@ -34,14 +34,22 @@ function slider() {
 /*SLAJDER KRAJ*/
 
 /* ZA FORMU DATUM*/
+function formatDate(){
 let dateControl = document.querySelector('input[type="date"]');
 let date = new Date();
+  return function (date){
+    console.log(date);
+  }
+/*let year=date.getFullYear();
+let day=date.getUTCDate();
+let month=date.getMonth();
+console.log(date.getUTCDate());*/
+}
+window.addEventListener("load", formatDate);
 /*KRAJ*/
 
-
 /*DISHES AJAX*/
-
-function request(url, f) {
+function request(url, f, typeOfFood) {
 
   let xhttp = new XMLHttpRequest();
 
@@ -52,44 +60,48 @@ function request(url, f) {
 
   xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
-      f(this);
+      f(this, typeOfFood);
     }
   }
 
   xhttp.open("GET", url);
+  xhttp.responseType = 'text';
   xhttp.send();
 }
 
-function getDinner(xml) {
+function getMenu(xml, type) {
   let obj = JSON.parse(xml.responseText);
-  for (let i = 5; i <=13 ; i++) {
-    let name = obj['DINNER'][i].name;
-    let desc = obj['DINNER'][i].desc;
-    populateDinner(name, desc);
+  let number;
+  let text="";
+  if (type==="DINNER"){
+    number=0;
+    text="";
   }
-
-}
-
-function populateDinner(name, desc) {
-  for (let i = 0; i < 1; i++) {
-
-    let newH = document.createElement('h4');
-    let contentH = document.createTextNode(name);
-    newH.appendChild(contentH);
-
-    let newP = document.createElement('p');
-    let contentP = document.createTextNode(desc);
-    newP.appendChild(contentP);
-
-    let newDiv = document.createElement('div');
-    newDiv.setAttribute('class', 'recipe');
-    newDiv.appendChild(newH);
-    newDiv.appendChild(newP);
-
-    document.getElementById('dinner').appendChild(newDiv);
+  else if (type==='LUNCH'){
+    number=1;
+    text="";
+  }
+  else if (type==='CATERING'){
+    number=2;
+    text="";
+  }
+  for (let i=0;i<obj[number][type].length;i++){
+    let name=obj[number][type][i].name;
+    let desc=obj[number][type][i].desc;
+    text+="<div class='recipe'><h4>"+name+"</h4><p>"+desc+"</p></div>";
+    document.getElementById('recipes').innerHTML=text;
   }
 }
-let djoka=document.getElementById('showDinner').addEventListener('click', function() {
-  request("dinner.json", getDinner);
+
+
+document.getElementById("btnDinner").addEventListener('click',function(){
+  request('food.json', getMenu, 'DINNER');
 })
+document.getElementById('btnLunch').addEventListener('click',function (){
+  request('food.json', getMenu, 'LUNCH');
+})
+document.getElementById('btnCatering').addEventListener('click', function (){
+  request('food.json', getMenu, 'CATERING');
+})
+
 /*AJAX END*/
