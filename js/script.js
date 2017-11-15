@@ -1,3 +1,27 @@
+/*LOCAL STORAGE*/
+let buttons=document.querySelectorAll('.button');
+buttons.forEach(function(button){
+  button.addEventListener('click',function(){
+    localStorageClicked(this.id);
+  });
+
+});
+
+function localStorageClicked(e){
+
+  if (e=='dinner-card'){
+    localStorage.setItem("type",'DINNER');
+  }
+  else if(e=='lunch-card'){
+    localStorage.setItem("type","LUNCH");
+  }
+  else if(e=='catering-card'){
+    localStorage.setItem("type","CATERING");
+  }
+}
+
+/*KRAJ*/
+
 window.addEventListener('load', slider);
 window.addEventListener("load", formatDate);
 function showMenu(e) {
@@ -33,7 +57,7 @@ function slider() {
 }
 /*KRAJ*/
 
-/*NE DOZVOLJAVA ODABIR DATUMA KOJI JE PRE SUTRASNJEG*/
+/*NE DOZVOLJAVA ODABIR DATUMA KOJI JE PRE SUTRASNJEG I POSTAVLJA DEFAULT VALUE NA SUTRASNJI DATUM*/
 function formatDate(){
   let dateControl = document.querySelector('input[type="date"]');
   let date = new Date();
@@ -41,24 +65,22 @@ function formatDate(){
   let day=date.getUTCDate()+1;
   let month=date.getMonth()+1;
   dateControl.setAttribute('min',year+'-'+month+'-'+day);
+  dateControl.value=year+'-'+month+'-'+day;
 }
 /*KRAJ*/
 
 /*POPUNJAVANJE DDL ZA BROJ LJUDI*/
+document.getElementById('people');
+for (let i=0;i<22;i++){
 
-
+}
 
 /*KRAJ*/
 
 /*AJAX ZAHTEV*/
 function request(url, f, typeOfFood) {
 
-  let xhttp = new XMLHttpRequest();
-
-  if (!xhttp) {
-    alert("Ajax not loaded");
-    return false;
-  }
+  const xhttp = new XMLHttpRequest();
 
   xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
@@ -95,7 +117,7 @@ function getMenu(xml, type) {/* DRUGI ARGUMENT JE KEY U FAJLU food.json KAKO BI 
     document.getElementById('gold').appendChild(gold);
   })();
 
-  if (type==="DINNER"){
+  if (type==="DINNER"){//PROVERAVA KOJI KEY JE SELEKTOVAN U food.json I ONDA POPUNJAVA DIV id='gold' i DIV id='recipes'
     number=0;
     text="";
   }
@@ -115,13 +137,19 @@ function getMenu(xml, type) {/* DRUGI ARGUMENT JE KEY U FAJLU food.json KAKO BI 
   }
 }
 /*KRAJ*/
-
 document.getElementById("btnDinner").addEventListener('click',function(){
+  localStorage.setItem('type','DINNER');
   request('food.json', getMenu, 'DINNER');
 })
 document.getElementById('btnLunch').addEventListener('click',function (){
+  localStorage.setItem('type','LUNCH');
   request('food.json', getMenu, 'LUNCH');
 })
 document.getElementById('btnCatering').addEventListener('click', function (){
+  localStorage.setItem('type','CATERING');
   request('food.json', getMenu, 'CATERING');
+})
+
+window.addEventListener('load',function(){
+  request('food.json',getMenu, localStorage.getItem('type'));
 })
