@@ -233,33 +233,18 @@ section {
   margin-top: 35px;
   text-align: center;
 }
-/*
-ul.leaders {
-  max-width: 40em;
-  padding: 0;
-  overflow-x: hidden;
-  list-style: none
+
+.dish table {
+  width:100%;
 }
 
-ul.leaders li:before {
-  float: left;
-  width: 0;
-  opacity: 0.4;
-  white-space: nowrap;
-  content: ". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "
+.dish td {
+  width:30%;
+  height:60px;
+  text-align:center;
+  border-bottom:1px solid black;
 }
 
-ul.leaders span:first-child {
-  padding-right: 0.33em;
-  background: white
-}
-
-ul.leaders span+span {
-  float: right;
-  padding-left: 0.33em;
-  background: white
-}
-*/
 .slider {
   width: 100%;
 }
@@ -348,7 +333,7 @@ footer p {
 
 /* POCETAK MEDIA QUERY //////////////////////////////////////*/
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (orientation: landscape) {
   .flex-row {
     flex-direction: row;
     align-items: center;
