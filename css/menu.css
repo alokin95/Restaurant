@@ -193,7 +193,7 @@ footer p {
 
 /* POCETAK MEDIA QUERY //////////////////////////////////////*/
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (orientation: landscape) {
   .flex-row {
     flex-direction: row;
     align-items: center;
