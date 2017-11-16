@@ -14,7 +14,7 @@
 
 <body>
 
-  <header>
+  <header id="header">
 
     <div id="head">
 
@@ -116,15 +116,15 @@
           <h3>Dinner</h3><br/>
           <table>
             <tr>
-              <td colspan='2'>Fried Calamari</td>
+              <td >Fried Calamari</td>
               <td>10</td>
             </tr>
             <tr>
-              <td colspan='2'>Fried Roman Artichokes</td>
+              <td >Fried Roman Artichokes</td>
               <td>14</td>
             </tr>
             <tr>
-              <td colspan='2'>Crab-Stuffed Jalapeño Popper</td>
+              <td >Crab-Stuffed Jalapeño Popper</td>
               <td>12</td>
             </tr>
           </table>
@@ -134,15 +134,15 @@
           <h3>Lunch</h3><br/>
           <table>
             <tr>
-              <td colspan='2'>Grilled Sandwiches</td>
+              <td >Grilled Sandwiches</td>
               <td>8.95</td>
             </tr>
             <tr>
-              <td colspan='2'>FHouse Salad</td>
+              <td >FHouse Salad</td>
               <td>7.95</td>
             </tr>
             <tr>
-              <td colspan='2'>Tomato & Red Onion Salad</td>
+              <td >Tomato & Red Onion Salad</td>
               <td>7.95</td>
             </tr>
           </table>
@@ -152,15 +152,15 @@
           <h3>Catering</h3><br/>
           <table>
             <tr>
-              <td colspan='2'>Appetizer Trays</td>
+              <td >Appetizer Trays</td>
               <td>65</td>
             </tr>
             <tr>
-              <td colspan='2'>Antipasto tray</td>
+              <td >Antipasto tray</td>
               <td>110</td>
             </tr>
             <tr>
-              <td colspan='2'>ConConcordia Sagittaria Salad</td>
+              <td >ConConcordia Sagittaria Salad</td>
               <td>40</td>
             </tr>
           </table>
@@ -245,21 +245,24 @@
           <div class="flex-row">
             <input type="date" name="date" id="date">
             <select id='time'>
-                  <option>15:00ʰ</option><option>15:30ʰ</option><option>16:00ʰ</option><option>16:30ʰ</option><option>17:00ʰ</option><option>17:30ʰ</option><option>18:00ʰ</option><option>18:30ʰ</option><option>19:00ʰ</option><option>19:30ʰ</option><option>20:00ʰ</option><option>20:30ʰ</option><option>21:00ʰ</option><option>21:30ʰ</option><option>22:00ʰ</option>
+              <option value='0'>Time</option><!--
+              <option>15:00ʰ</option><option>15:30ʰ</option><option>16:00ʰ</option><option>16:30ʰ</option><option>17:00ʰ</option><option>17:30ʰ</option><option>18:00ʰ</option><option>18:30ʰ</option><option>19:00ʰ</option><option>19:30ʰ</option><option>20:00ʰ</option><option>20:30ʰ</option><option>21:00ʰ</option><option>21:30ʰ</option><option>22:00ʰ</option>-->
                 </select>
             <select id="people">
-                  <option>2 people</option><option>15:30ʰ</option><option>16:00ʰ</option><option>16:30ʰ</option><option>17:00ʰ</option><option>17:30ʰ</option><option>18:00ʰ</option><option>18:30ʰ</option><option>19:00ʰ</option><option>19:30ʰ</option><option>20:00ʰ</option><option>20:30ʰ</option><option>21:00ʰ</option><option>21:30ʰ</option><option>22:00ʰ</option>
+              <option value='0'>Number of people</option>
+                  <!--<option>2 people</option><option>15:30ʰ</option><option>16:00ʰ</option><option>16:30ʰ</option><option>17:00ʰ</option><option>17:30ʰ</option><option>18:00ʰ</option><option>18:30ʰ</option><option>19:00ʰ</option><option>19:30ʰ</option><option>20:00ʰ</option><option>20:30ʰ</option><option>21:00ʰ</option><option>21:30ʰ</option><option>22:00ʰ</option>-->
                 </select>
           </div>
+          <button id="submit">Make a reservation</button>
         </form>
       </div>
     </section>
 
+    <section id="map">
+
+    </section>
+
   </main>
-
-
-  <!--  GUGL MAPA-->
-
 
   <footer>
     <div class="social">
@@ -269,10 +272,12 @@
     </div>
     <p>&copy; 2017 By Restaurant Concordia Sagittaria All rights reserved</p>
   </footer>
-
+<script src="js/script.js"></script>
   <script src="js/jquery.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0qvonPHdCCv670vEg6tnRzPNucgpO8TA&callback=initMap">
+  </script>
   <script src="lightbox\lightbox2-master\dist\js\lightbox.js"></script>
-  <script src="js/script.js"></script>
+
 </body>
 
 </html>
