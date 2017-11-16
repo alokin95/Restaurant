@@ -1,12 +1,16 @@
-/*LOCAL STORAGE*/
 let buttons=document.querySelectorAll('.button');
-buttons.forEach(function(button){
+buttons.forEach(button=>{
   button.addEventListener('click',function(){
     localStorageClicked(this.id);
   });
 
 });
-
+window.addEventListener('load',() =>{
+  if (!localStorage.type){
+    localStorage.setItem('type','DINNER');
+  }
+})
+/*LOCAL STORAGE*/
 function localStorageClicked(e){
 
   if (e=='dinner-card'){
@@ -19,11 +23,24 @@ function localStorageClicked(e){
     localStorage.setItem("type","CATERING");
   }
 }
-
 /*KRAJ*/
 
 window.addEventListener('load', slider);
 window.addEventListener("load", formatDate);
+window.addEventListener("load", people);
+window.addEventListener("load", time);
+window.addEventListener('scroll', scrollHeader);
+//HEADER SCROLL FUNKCJA
+function scrollHeader() {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        document.getElementById("header").style.opacity="1";
+    } else {
+        document.getElementById("header").style.opacity="0.7";
+    }
+}
+//KRAJ
+
+//MENU START
 function showMenu(e) {
   e.classList.toggle("change");
   document.getElementById('menu').classList.toggle('menu-show');
@@ -32,7 +49,6 @@ function showMenu(e) {
 document.getElementById('cont').addEventListener('click', function() {
   showMenu(this);
 })
-
 /*MENU KRAJ*/
 
 /* SLAJDER NA INDEX STRANI: POCETAK*/
@@ -69,13 +85,49 @@ function formatDate(){
 }
 /*KRAJ*/
 
-/*POPUNJAVANJE DDL ZA BROJ LJUDI*/
-document.getElementById('people');
-for (let i=0;i<22;i++){
+//POPUNJAVANJE DDL ZA VREME
+function time(){
+  let time=document.getElementById('time');
+  let value=15;
+  for (let i=0;i<9;i++){
+    let newOption=document.createElement('option');
+    newOption.setAttribute('value',value+":00");
+    let optionText=document.createTextNode(value+":00");
+    newOption.appendChild(optionText);
+    time.appendChild(newOption);
+    value++;
+    }
+};
+//KRAJ
 
-}
+//POPUNJAVANJE DDL ZA BROJ LJUDI
+function people(){
+  let people=document.getElementById('people');
+  let value=2;
+  for (let i=0;i<22;i++){
+    let newOption=document.createElement('option');
+    newOption.setAttribute('value',value);
+    let optionText=document.createTextNode(value+" people");
+    newOption.appendChild(optionText);
+    people.appendChild(newOption);
+    value++;
+  }
+};
+//KRAJ
 
-/*KRAJ*/
+//GOOGLE MAP LOKACIJA
+function initMap() {
+        var uluru = {lat: 40.663059, lng: -73.962837};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+//KRAJ
 
 /*AJAX ZAHTEV*/
 function request(url, f, typeOfFood) {
