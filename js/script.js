@@ -1,3 +1,37 @@
+class Reservation{
+	
+	constructor(){
+		this.inputs=document.getElementById('first');
+		this.people=document.getElementById('people');
+		this.time=document.getElementById('time');
+		this.phone=document.getElementById('tel');
+		this.buttons=document.getElementById('submit');
+		
+		this._addListeners();
+	}
+	
+	test(){
+		
+		let newP=document.createElement('p');
+		let newText=document.createTextNode(this.inputs.value);
+		newP.appendChild(newText);
+		
+		document.getElementById('orders').appendChild(newP);
+	}
+	
+	_addListeners(){
+		this.buttons.addEventListener('click',this.test.bind(this));
+	}
+	
+}
+
+
+/*class Dodatak extends Reservation{
+	constructor(){
+		super();
+	}
+}*/
+
 let buttons=document.querySelectorAll('.button');
 buttons.forEach(button=>{
   button.addEventListener('click',function(){
@@ -13,13 +47,13 @@ window.addEventListener('load',() =>{
 /*LOCAL STORAGE*/
 function localStorageClicked(e){
 
-  if (e=='dinner-card'){
+  if (e == 'dinner-card'){
     localStorage.setItem("type",'DINNER');
   }
-  else if(e=='lunch-card'){
+  else if(e == 'lunch-card'){
     localStorage.setItem("type","LUNCH");
   }
-  else if(e=='catering-card'){
+  else if(e == 'catering-card'){
     localStorage.setItem("type","CATERING");
   }
 }
@@ -32,9 +66,10 @@ window.addEventListener("load", time);
 window.addEventListener('scroll', scrollHeader);
 //HEADER SCROLL FUNKCJA
 function scrollHeader() {
+	
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
         document.getElementById("header").style.opacity="1";
-    } else {
+	} else {
         document.getElementById("header").style.opacity="0.7";
     }
 }
@@ -42,8 +77,10 @@ function scrollHeader() {
 
 //MENU START
 function showMenu(e) {
+	
   e.classList.toggle("change");
   document.getElementById('menu').classList.toggle('menu-show');
+  
 }
 
 document.getElementById('cont').addEventListener('click', function() {
@@ -75,13 +112,21 @@ function slider() {
 
 /*NE DOZVOLJAVA ODABIR DATUMA KOJI JE PRE SUTRASNJEG I POSTAVLJA DEFAULT VALUE NA SUTRASNJI DATUM*/
 function formatDate(){
+	
   let dateControl = document.querySelector('input[type="date"]');
+  
   let date = new Date();
   let year=date.getFullYear();
-  let day=date.getUTCDate()+1;
-  let month=date.getMonth()+1;
-  dateControl.setAttribute('min',year+'-'+month+'-'+day);
-  dateControl.value=year+'-'+month+'-'+day;
+  let day=date.getUTCDate();
+  
+  if (day<10){
+	  day=`0${day}`;
+  }
+  
+  let month=date.getMonth() + 1;
+  
+  dateControl.setAttribute('min',`${year}-${month}-${day}`);
+  dateControl.value = `${year}-${month}-${day}`;
 }
 /*KRAJ*/
 
@@ -89,10 +134,10 @@ function formatDate(){
 function time(){
   let time=document.getElementById('time');
   let value=15;
-  for (let i=0;i<9;i++){
+  for (let i = 0; i < 9; i++){
     let newOption=document.createElement('option');
-    newOption.setAttribute('value',value+":00");
-    let optionText=document.createTextNode(value+":00");
+    newOption.setAttribute('value',`${value}:00`);
+    let optionText=document.createTextNode(`${value}:00`);
     newOption.appendChild(optionText);
     time.appendChild(newOption);
     value++;
@@ -107,14 +152,14 @@ function people(){
   for (let i=0;i<22;i++){
     let newOption=document.createElement('option');
     newOption.setAttribute('value',value);
-    let optionText=document.createTextNode(value+" people");
+    let optionText=document.createTextNode(`${value} people`);
     newOption.appendChild(optionText);
     people.appendChild(newOption);
     value++;
   }
 };
 //KRAJ
-
+/*
 //GOOGLE MAP LOKACIJA
 function initMap() {
         var uluru = {lat: 40.663059, lng: -73.962837};
@@ -127,7 +172,7 @@ function initMap() {
           map: map
         });
       }
-//KRAJ
+//KRAJ*/
 
 /*AJAX ZAHTEV*/
 function request(url, f, typeOfFood) {
@@ -169,22 +214,22 @@ function getMenu(xml, type) {/* DRUGI ARGUMENT JE KEY U FAJLU food.json KAKO BI 
     document.getElementById('gold').appendChild(gold);
   })();
 
-  if (type==="DINNER"){//PROVERAVA KOJI KEY JE SELEKTOVAN U food.json I ONDA POPUNJAVA DIV id='gold' i DIV id='recipes'
+  if (type=="DINNER"){//PROVERAVA KOJI KEY JE SELEKTOVAN U food.json I ONDA POPUNJAVA DIV id='gold' i DIV id='recipes'
     number=0;
     text="";
   }
-  else if (type==='LUNCH'){
+  else if (type=='LUNCH'){
     number=1;
     text="";
   }
-  else if (type==='CATERING'){
+  else if (type=='CATERING'){
     number=2;
     text="";
   }
   for (let i=0;i<obj[number][type].length;i++){
     let name=obj[number][type][i].name;
     let desc=obj[number][type][i].desc;
-    text+="<div class='recipe'><h4>"+name+"</h4><p>"+desc+"</p></div>";
+	text+=`<div class='recipe'><h4>${name}</h4><p>${desc}</p></div>`;
     document.getElementById('recipes').innerHTML=text;
   }
 }
@@ -205,3 +250,5 @@ document.getElementById('btnCatering').addEventListener('click', function (){
 window.addEventListener('load',function(){
   request('food.json',getMenu, localStorage.getItem('type'));
 })
+
+
