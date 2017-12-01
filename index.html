@@ -233,7 +233,7 @@
       <h1>BOOK A TABLE</h1>
       <hr>
       <div class="reservation-form">
-        <form>
+        <form id="reservationForm">
           <div class="flex-row">
             <input type="text" id="first" name="first" placeholder="First name">
             <input type="text" id="last" name="last" placeholder="Last name">
@@ -253,14 +253,18 @@
                   <!--<option>2 people</option><option>15:30ʰ</option><option>16:00ʰ</option><option>16:30ʰ</option><option>17:00ʰ</option><option>17:30ʰ</option><option>18:00ʰ</option><option>18:30ʰ</option><option>19:00ʰ</option><option>19:30ʰ</option><option>20:00ʰ</option><option>20:30ʰ</option><option>21:00ʰ</option><option>21:30ʰ</option><option>22:00ʰ</option>-->
                 </select>
           </div>
-          <button id="submit">Make a reservation</button>
+          
         </form>
+		<button id="submit">Make a reservation</button>
       </div>
+	  <div id="orders">
+	  
+	  </div>
     </section>
 
-    <section id="map">
+  <!--  <section id="map">
 
-    </section>
+    </section>-->
 
   </main>
 
@@ -272,10 +276,11 @@
     </div>
     <p>&copy; 2017 By Restaurant Concordia Sagittaria All rights reserved</p>
   </footer>
-<script src="js/script.js"></script>
+  
   <script src="js/jquery.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0qvonPHdCCv670vEg6tnRzPNucgpO8TA&callback=initMap">
-  </script>
+<script src="js/script.js"></script>
+  <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjPf7QepD554KkR_Q-XxoE4GL0j-afioI&callback=initMap">
+  </script>-->
   <script src="lightbox\lightbox2-master\dist\js\lightbox.js"></script>
 
 </body>
