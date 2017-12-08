@@ -1,36 +1,62 @@
 class Reservation{
 	
 	constructor(){
-		this.inputs=document.getElementById('first');
+		
+		this.first=document.querySelector('#first');
+		this.last=document.querySelector('#last');
 		this.people=document.getElementById('people');
 		this.time=document.getElementById('time');
 		this.phone=document.getElementById('tel');
 		this.buttons=document.getElementById('submit');
 		
 		this._addListeners();
+		console.log(first.value+""+last);
 	}
 	
-	test(){
+	createReservation(){
+		
+		let newDiv=document.createElement('div');
+		newDiv.setAttribute('class', 'order');
 		
 		let newP=document.createElement('p');
-		let newText=document.createTextNode(this.inputs.value);
-		newP.appendChild(newText);
 		
-		document.getElementById('orders').appendChild(newP);
+		let newDelete=document.createElement('p');
+		
+		let cancel=document.createTextNode('Cancel');
+		
+		newDelete.setAttribute('class','for-delete');
+		
+		newDelete.appendChild(cancel);
+		
+		let text=`<h3>${this.first.value} ${this.last.value}</h3>
+			<h4>${this.phone.value}</h4>
+			<h4>Email</h4>
+			<p>${this.people.value} people</p>
+			<p>${this.time.value}</p>`;
+		
+		newDiv.appendChild(newDelete);
+		
+		document.getElementById('orders').innerHTML=text;
+		
+		let forDelete=document.querySelectorAll('.for-delete');
+		forDelete.forEach(element=>{
+			element.addEventListener('click',this.removeReservation);
+		});
+	}
+	
+	removeReservation(){
+		
+		this.parentNode.remove();
 	}
 	
 	_addListeners(){
-		this.buttons.addEventListener('click',this.test.bind(this));
+		
+		this.buttons.addEventListener('click',this.createReservation.bind(this));
 	}
 	
 }
 
-
-/*class Dodatak extends Reservation{
-	constructor(){
-		super();
-	}
-}*/
+//OOP END//
 
 let buttons=document.querySelectorAll('.button');
 buttons.forEach(button=>{
