@@ -309,12 +309,17 @@ section {
   margin-top: 80px;
 }
 
-input, select {
+input, select, button {
   text-align: center;
   padding: .8125em 1em .8125em;
   height: 3em;
   font-size: 1rem;
   margin-bottom: 10px;
+  background-color: white;
+}
+
+button {
+	margin-top:30px;
 }
 
 #map {
