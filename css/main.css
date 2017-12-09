@@ -309,7 +309,7 @@ section {
   margin-top: 80px;
 }
 
-input, select, button {
+#reservation-form input, select, button {
   text-align: center;
   padding: .8125em 1em .8125em;
   height: 3em;
@@ -318,8 +318,19 @@ input, select, button {
   background-color: white;
 }
 
-button {
+#reservation-form button {
 	margin-top:30px;
+}
+
+.order {
+	width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+	border:1px solid black;
+}
+
+.order button {
+	float:right;
 }
 
 #map {
