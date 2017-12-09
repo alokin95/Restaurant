@@ -9,18 +9,18 @@ class Reservation{
 		this.date=document.querySelector('#date');
 		this.time=document.querySelector('#time');
 		this.phone=document.querySelector('#tel');
-		this.button=document.querySelector('#submit');
+		this.buttons=document.querySelector('#submit');
 		
 		this._addListeners();
 	}
 	
 	createReservation(){
 		
-		let divs=document.querySelectorAll('.order');
+		let divs = document.querySelectorAll('.order');
 		
 		if (divs.length>0){
 			
-			
+			alert("Please confirm your reservation below or cancel it so you can make another one");
 			
 		}
 		else {
@@ -28,11 +28,11 @@ class Reservation{
 			let newDiv=document.createElement('div');
 			newDiv.setAttribute('class', 'order');
 			
-			let newSubmit=document.createElement('button');
-			let newDelete=document.createElement('button');
+			let newSubmit = document.createElement('button');
+			let newDelete = document.createElement('button');
 			
-			let cancel=document.createTextNode('Cancel');
-			let proceed=document.createTextNode('Proceed');
+			let cancel = document.createTextNode('Cancel');
+			let proceed = document.createTextNode('Proceed');
 			
 			newDelete.setAttribute('class','for-delete');
 			
@@ -68,7 +68,9 @@ class Reservation{
 	
 	_addListeners(){
 		
-		this.button.addEventListener('click',this.createReservation.bind(this));
+		if (this.buttons){
+			this.buttons.addEventListener('click',this.createReservation.bind(this));
+		}
 	}
 	
 }
