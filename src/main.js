@@ -1,12 +1,10 @@
-
-
 import Reservation from './reservation';
-
-
+import {slideCount, slider} from './slider';
+import Form from './form';
 
 let buttons=document.querySelectorAll('.button');
-buttons.forEach(button=>{
-  button.addEventListener('click',function(){
+buttons.forEach(btn=>{
+  btn.addEventListener('click',function(){
     localStorageClicked(this.id);
   });
 
@@ -31,10 +29,10 @@ function localStorageClicked(e){
 }
 /*KRAJ*/
 
-window.addEventListener('load', slider);
-window.addEventListener("load", formatDate);
-window.addEventListener("load", people);
-window.addEventListener("load", time);
+//window.addEventListener('load', slider);
+//window.addEventListener("load", formatDate);
+//window.addEventListener("load", people);
+//window.addEventListener("load", time);
 window.addEventListener('scroll', scrollHeader);
 //HEADER SCROLL FUNKCJA
 function scrollHeader() {
@@ -60,7 +58,7 @@ document.getElementById('cont').addEventListener('click', function() {
 })
 /*MENU KRAJ*/
 
-/* SLAJDER NA INDEX STRANI: POCETAK*/
+/* SLAJDER NA INDEX STRANI: POCETAK
 let slideCount = 0;
 
 function slider() {
@@ -83,7 +81,7 @@ function slider() {
 /*KRAJ*/
 
 /*NE DOZVOLJAVA ODABIR DATUMA KOJI JE PRE SUTRASNJEG I POSTAVLJA DEFAULT VALUE NA SUTRASNJI DATUM*/
-function formatDate(){
+/*function formatDate(){
 	
   let dateControl = document.querySelector('input[type="date"]');
   
@@ -103,7 +101,7 @@ function formatDate(){
 /*KRAJ*/
 
 //POPUNJAVANJE DDL ZA VREME
-function time(){
+/*function time(){
   let time=document.getElementById('time');
   let value=15;
   for (let i = 0; i < 9; i++){
@@ -118,7 +116,7 @@ function time(){
 //KRAJ
 
 //POPUNJAVANJE DDL ZA BROJ LJUDI
-function people(){
+/*function people(){
   let people=document.getElementById('people');
   let value=2;
   for (let i=0;i<22;i++){
