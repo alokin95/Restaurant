@@ -1,0 +1,597 @@
+body {
+  font-family: 'Droid Serif', serif;
+  font-size: 20px;
+  color: #46484d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex-row {
+  display: block;
+}
+
+header {
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  z-index: 3;
+  opacity: 0.7;
+  transition: all 1s ease;
+}
+
+#head {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+#logo {
+  flex: 1;
+  padding: 10px 0px 0px 0px;
+  margin-left: 5%;
+}
+
+.nav {
+  flex: 4;
+  text-align: right;
+  padding-top: 10px;
+}
+
+.nav span {
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+#menu {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 50px;
+  right: 0;
+  transition: 1s;
+  background-color: white;
+  z-index: 2;
+  font-style: italic;
+  font-weight: 900;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.menu-cover {
+  display: none;
+}
+
+.menu-content {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.nav-links {
+  list-style: none;
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+.nav-links li {
+  width: 50%;
+  margin: 0 auto;
+  text-align: right;
+  padding: 10px;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #46484d;
+}
+
+.menu-close {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  font-size: 3em;
+}
+
+.social {
+  margin-top: 10px;
+}
+
+.social a {
+  color: #46484d;
+  text-decoration: none;
+}
+
+.social span {
+  padding: 20px;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+.cover {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.cover-left {
+  display: none;
+}
+
+.cover-right {
+  flex: 1;
+  text-align: center;
+  padding: 200px 0px 200px 0px;
+}
+
+.cover-right h3:nth-of-type(1) {
+  font-size: 1.875rem;
+  color: #d3d6dc;
+  letter-spacing: 8px;
+  font-style: italic;
+  text-transform: lowercase;
+  font-weight: 300;
+}
+
+.cover-right h3:nth-of-type(2) {
+  font-size: 1.875rem;
+  font-style: italic;
+  text-transform: lowercase;
+  letter-spacing: 2.5px;
+  font-weight: 300;
+}
+
+.cover-right h4 {
+  color: #46484d;
+  opacity: 0.9;
+}
+
+.cover-right h1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.cover-img {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#description {
+  padding: 30px;
+  width: 100%;
+  font-family: 'Buda';
+  font-weight: normal;
+  text-align: center;
+}
+
+section {
+  width: 100%;
+  font-family: 'Buda';
+}
+
+.card {
+  text-align: center;
+  position: relative;
+  margin-bottom: 5%;
+}
+
+.card a {
+  color: #46484d;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.button {
+  background-color: rgba(255, 255, 255, .98);
+  box-shadow: rgba(0, 0, 0, .15) 0 2px 14px -2px;
+  width: 60%;
+  position: absolute;
+  padding: 5%;
+  top: 40%;
+  left: 20%;
+  margin: auto;
+  z-index: 1;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card img {
+  width: 50%;
+  height: auto;
+}
+
+.dishes {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.dishes-heading {
+  font-family: 'Buda';
+  text-align: center;
+  width: 100%;
+}
+
+.dish {
+  flex-basis: 30%;
+}
+
+.dish h3 {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.dish table {
+  width:100%;
+}
+
+.dish td {
+  height:60px;
+  text-align:left;
+  border-bottom:1px solid black;
+}
+
+.slider {
+  width: 100%;
+}
+
+.slider-img {
+  display: none;
+}
+
+.slider-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.enterier {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 15%;
+}
+
+.enterier-heading {
+  width: 80%;
+  text-align: center;
+}
+
+.enterier-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10%;
+}
+
+.enterier-img {
+  flex-basis: 32%;
+}
+
+.enterier-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.working-hours {
+  font-family: 'Buda';
+  margin-top: 10%;
+  background-color: black;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  ;
+}
+
+.reservation {
+  text-align: center;
+  padding: 70px;
+}
+
+.reservation-form {
+  margin-top: 80px;
+}
+
+#reservation-form input, select, button {
+  text-align: center;
+  padding: .8125em 1em .8125em;
+  height: 3em;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+#reservation-form button {
+	margin-top:30px;
+}
+
+.order {
+    margin: 0 auto;
+    margin-top: 30px;
+	border:1px solid black;
+}
+
+.error {
+	border-color: red;
+}
+
+.data {
+	border-color: green;
+}
+
+#map {
+  border-top:1px solid black;
+  height: 400px;
+  width: 100%;
+}
+
+
+footer {
+  border-top: 1px solid #46484d;
+  height: 150px;
+  text-align: center;
+}
+
+footer .social {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+/* POCETAK MEDIA QUERY //////////////////////////////////////*/
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .flex-row {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  #head {
+    width: 90%;
+  }
+  .menu-cover {
+    display: inline-block;
+    flex: 1;
+    padding: 5%;
+  }
+  .menu-content {
+    flex: 1;
+    padding: 5%;
+  }
+  
+  #menu {
+	top: 0px;
+  }
+  
+  #menu a {
+    display: inline-block;
+    transition: 0.1s;
+  }
+  #menu a:hover {
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Safari */
+    transform: scale(1.1);
+    /* Standard syntax */
+  }
+  .nav-links {
+    margin-top: 0;
+  }
+  .menu-cover img {
+    width: 100%;
+    height: auto;
+  }
+  .cover {
+    width: 100%;
+    height: 700px;
+    margin-bottom: 70px;
+    background-color: #fafafa;
+  }
+  .cover-left {
+    flex-basis: 60%;
+    display: inline;
+  }
+  .cover-left img {
+    width: 100%;
+  }
+  .cover-right {
+    flex-basis: 40%;
+    text-align: center;
+    padding: 0px;
+  }
+  .cover-right h3:nth-of-type(1) {
+    font-size: 1.875rem;
+    color: #d3d6dc;
+    letter-spacing: 8px;
+    font-style: italic;
+    text-transform: lowercase;
+    font-weight: 300;
+  }
+  .cover-right h3:nth-of-type(2) {
+    font-size: 1.875rem;
+    font-style: italic;
+    text-transform: lowercase;
+    letter-spacing: 2.5px;
+    font-weight: 300;
+  }
+  .cover-right h4 {
+    color: #46484d;
+    opacity: 0.9;
+  }
+  .cover-right h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 300;
+  }
+  #description {
+    min-height: 520px;
+    padding-top: 100px;
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Buda';
+    font-weight: normal;
+    text-align: center;
+  }
+  section {
+    min-height: 500px;
+  }
+  .card {
+    flex-basis: 23%;
+  }
+  .button {
+    width: 100%;
+    top: 40%;
+    left: 0%;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .card img {
+    width: 80%;
+  }
+  .dishes {
+    display: flex;
+    flex-direction: column;
+  }
+  .dish {
+    padding: 50px 30px;
+  }
+  .enterier {
+    margin-top: 10%;
+  }
+  .enterier-img {
+    flex-basis: 32%;
+  }
+  .working-hours {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 100px;
+  }
+  input[type="text"], input[type="tel"], input[type="email"] {
+    flex-basis: 48%;
+  }
+  input[type="date"] {
+    flex-basis: 31%;
+  }
+  #time {
+    flex-basis: 15%;
+  }
+  #people {
+    flex-basis: 25%;
+  }
+}
+
+/*ANIMACIJE*/
+
+/*ANIMACIJA ZA SLAJDER*/
+
+.transition {
+  -webkit-animation-name: transition;
+  -webkit-animation-duration: 3s;
+  animation-name: transition;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes transition {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes transition {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+/*KRAJ*/
+
+/*HOVER PREKO KARTICA*/
+
+.button:hover+img {
+  -ms-transform: translate(0, -20px);
+  -webkit-transform: translate(0, -20px);
+  transform: translate(0, -20px);
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.card img {
+  transition: 1s;
+}
+
+/*KRAJ*/
+
+/*HOVER PREKO GALERIJE */
+
+.enterier-img img {
+  transition: all .2s ease-in-out;
+}
+
+.enterier-img img:hover {
+  transform: scale(1.1);
+}
+
+/*KRAJ*/
+
+/* MENU ANIMACIJA*/
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
