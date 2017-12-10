@@ -74,11 +74,17 @@ var _reservation = __webpack_require__(1);
 
 var _reservation2 = _interopRequireDefault(_reservation);
 
-var _slider = __webpack_require__(2);
+var _formSelect = __webpack_require__(3);
 
-var _form = __webpack_require__(3);
+var _formSelect2 = _interopRequireDefault(_formSelect);
 
-var _form2 = _interopRequireDefault(_form);
+var _request = __webpack_require__(7);
+
+var _request2 = _interopRequireDefault(_request);
+
+var _getMenu = __webpack_require__(8);
+
+var _getMenu2 = _interopRequireDefault(_getMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -94,22 +100,19 @@ window.addEventListener('load', function () {
   }
 });
 /*LOCAL STORAGE*/
-function localStorageClicked(e) {
+function localStorageClicked(value) {
 
-  if (e == 'dinner-card') {
+  if (value == 'dinner-card') {
     localStorage.setItem("type", 'DINNER');
-  } else if (e == 'lunch-card') {
+  } else if (value == 'lunch-card') {
     localStorage.setItem("type", "LUNCH");
-  } else if (e == 'catering-card') {
+  } else if (value == 'catering-card') {
     localStorage.setItem("type", "CATERING");
   }
 }
 /*KRAJ*/
 
-//window.addEventListener('load', slider);
-//window.addEventListener("load", formatDate);
-//window.addEventListener("load", people);
-//window.addEventListener("load", time);
+window.addEventListener('load', slider);
 window.addEventListener('scroll', scrollHeader);
 //HEADER SCROLL FUNKCJA
 function scrollHeader() {
@@ -134,14 +137,14 @@ document.getElementById('cont').addEventListener('click', function () {
 });
 /*MENU KRAJ*/
 
-/* SLAJDER NA INDEX STRANI: POCETAK
-let slideCount = 0;
+// SLAJDER NA INDEX STRANI: POCETAK
+var slideCount = 0;
 
 function slider() {
 
-  let slides = document.getElementsByClassName("slider-img");
+  var slides = document.getElementsByClassName("slider-img");
 
-  for (let i = 0; i < slides.length; i++) {
+  for (var i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
 
@@ -156,147 +159,21 @@ function slider() {
 }
 /*KRAJ*/
 
-/*NE DOZVOLJAVA ODABIR DATUMA KOJI JE PRE SUTRASNJEG I POSTAVLJA DEFAULT VALUE NA SUTRASNJI DATUM*/
-/*function formatDate(){
-	
-  let dateControl = document.querySelector('input[type="date"]');
-  
-  let date = new Date();
-  let year=date.getFullYear();
-  let day=date.getUTCDate();
-  
-  if (day<10){
-	  day=`0${day}`;
-  }
-  
-  let month=date.getMonth() + 1;
-  
-  dateControl.setAttribute('min',`${year}-${month}-${day}`);
-  dateControl.value = `${year}-${month}-${day}`;
-}
-/*KRAJ*/
-
-//POPUNJAVANJE DDL ZA VREME
-/*function time(){
-  let time=document.getElementById('time');
-  let value=15;
-  for (let i = 0; i < 9; i++){
-    let newOption=document.createElement('option');
-    newOption.setAttribute('value',`${value}:00`);
-    let optionText=document.createTextNode(`${value}:00`);
-    newOption.appendChild(optionText);
-    time.appendChild(newOption);
-    value++;
-    }
-};
-//KRAJ
-
-//POPUNJAVANJE DDL ZA BROJ LJUDI
-/*function people(){
-  let people=document.getElementById('people');
-  let value=2;
-  for (let i=0;i<22;i++){
-    let newOption=document.createElement('option');
-    newOption.setAttribute('value',value);
-    let optionText=document.createTextNode(`${value} people`);
-    newOption.appendChild(optionText);
-    people.appendChild(newOption);
-    value++;
-  }
-};
-//KRAJ
-/*
-//GOOGLE MAP LOKACIJA
-function initMap() {
-        var uluru = {lat: 40.663059, lng: -73.962837};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-//KRAJ*/
-
-/*AJAX ZAHTEV*/
-function request(url, f, typeOfFood) {
-
-  var xhttp = new XMLHttpRequest();
-
-  xhttp.onreadystatechange = function () {
-    if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
-      f(this, typeOfFood);
-    }
-  };
-
-  xhttp.open("GET", url);
-  xhttp.responseType = 'text';
-  xhttp.send();
-}
-/* KRAJ */
-
-/* POPUNJAVANJE menu.html STRANICE SA RECEPTIMA IZ FAJLA food.json U ZAVISNOSTI KOJI RECEPTI SU ODABRANI*/
-function getMenu(xml, type) {
-  /* DRUGI ARGUMENT JE KEY U FAJLU food.json KAKO BI ZNAO KOJE RECEPTE DA DOVUCE IZ AJAX ZAHTEVA*/
-  var obj = JSON.parse(xml.responseText);
-  var number = void 0;
-  var text = "";
-
-  (function () {
-    /* BRISE NASLOV I gold.png IZ DIV-a id='gold' KAKO BI SE NASLOV MENJAO NAKON ODABIRA RECEPTA*/
-    var gold = document.getElementById("gold");
-    while (gold.hasChildNodes()) {
-      gold.removeChild(gold.firstChild);
-    }
-  })();
-
-  (function () {
-    /*PRAVI NOVI NASLOV I gold.png*/
-    var heading = document.createElement('h1');
-    var headingText = document.createTextNode(type);
-    heading.appendChild(headingText);
-    var gold = document.createElement('img');
-    gold.setAttribute('src', 'images/other/gold.png');
-    document.getElementById('gold').appendChild(heading);
-    document.getElementById('gold').appendChild(gold);
-  })();
-
-  if (type == "DINNER") {
-    //PROVERAVA KOJI KEY JE SELEKTOVAN U food.json I ONDA POPUNJAVA DIV id='gold' i DIV id='recipes'
-    number = 0;
-    text = "";
-  } else if (type == 'LUNCH') {
-    number = 1;
-    text = "";
-  } else if (type == 'CATERING') {
-    number = 2;
-    text = "";
-  }
-  for (var i = 0; i < obj[number][type].length; i++) {
-    var name = obj[number][type][i].name;
-    var desc = obj[number][type][i].desc;
-    text += '<div class=\'recipe\'><h4>' + name + '</h4><p>' + desc + '</p></div>';
-    document.getElementById('recipes').innerHTML = text;
-  }
-}
-/*KRAJ*/
-document.getElementById("btnDinner").addEventListener('click', function () {
+document.querySelector("#btnDinner").addEventListener('click', function () {
   localStorage.setItem('type', 'DINNER');
-  request('food.json', getMenu, 'DINNER');
+  (0, _request2.default)('food.json', _getMenu2.default, 'DINNER');
 });
-document.getElementById('btnLunch').addEventListener('click', function () {
+document.querySelector('#btnLunch').addEventListener('click', function () {
   localStorage.setItem('type', 'LUNCH');
-  request('food.json', getMenu, 'LUNCH');
+  (0, _request2.default)('food.json', _getMenu2.default, 'LUNCH');
 });
-document.getElementById('btnCatering').addEventListener('click', function () {
+document.querySelector('#btnCatering').addEventListener('click', function () {
   localStorage.setItem('type', 'CATERING');
-  request('food.json', getMenu, 'CATERING');
+  (0, _request2.default)('food.json', _getMenu2.default, 'CATERING');
 });
 
 window.addEventListener('load', function () {
-  request('food.json', getMenu, localStorage.getItem('type'));
+  (0, _request2.default)('food.json', _getMenu2.default, localStorage.getItem('type'));
 });
 
 /***/ }),
@@ -307,7 +184,7 @@ window.addEventListener('load', function () {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+        value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -315,113 +192,148 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Reservation = function () {
-	function Reservation() {
-		_classCallCheck(this, Reservation);
+        function Reservation() {
+                _classCallCheck(this, Reservation);
 
-		this.first = document.querySelector('#first');
-		this.last = document.querySelector('#last');
-		this.people = document.querySelector('#people');
-		this.email = document.querySelector('#email');
-		this.date = document.querySelector('#date');
-		this.time = document.querySelector('#time');
-		this.phone = document.querySelector('#tel');
-		this.buttons = document.querySelector('#submit');
+                this.first = document.querySelector('#first');
+                this.last = document.querySelector('#last');
+                //this.phone=document.querySelector('#tel');
+                //this.email=document.querySelector('#email');
+                this.date = document.querySelector('#date');
+                this.time = document.querySelector('#time');
+                this.people = document.querySelector('#people');
+                this.buttons = document.querySelector('#submit');
 
-		this._addListeners();
-	}
+                this._addListeners();
+        }
 
-	_createClass(Reservation, [{
-		key: 'createReservation',
-		value: function createReservation() {
-			var _this = this;
+        _createClass(Reservation, [{
+                key: 'validation',
+                value: function validation() {
 
-			var divs = document.querySelectorAll('.order');
+                        var errors = [];
 
-			if (divs.length > 0) {
+                        var regPhone = "/^06[01234569]\/[0-9]{6,7}$/";
 
-				alert("Please confirm your reservation below or cancel it so you can make another one");
-			} else {
+                        if (this.first.value < 3) {
+                                errors.push(this.first.id);
+                                this.first.classList.add('error');
+                                this.first.classList.remove('data');
+                        } else {
+                                this.first.classList.remove('error');
+                                this.first.classList.add('data');
+                        }
 
-				var newDiv = document.createElement('div');
-				newDiv.setAttribute('class', 'order');
+                        if (this.last.value < 3) {
+                                errors.push(this.last.id);
+                                this.last.classList.add('error');
+                                this.last.classList.remove('data');
+                        } else {
+                                this.last.classList.remove('error');
+                                this.last.classList.add('data');
+                        }
 
-				var newSubmit = document.createElement('button');
-				var newDelete = document.createElement('button');
+                        /*if (!this.phone.value.match(regPhone)){
+                        errors.push(this.phone.id);
+                        this.phone.style.borderColor='red';
+                        }*/
 
-				var cancel = document.createTextNode('Cancel');
-				var proceed = document.createTextNode('Proceed');
+                        var time = "";
+                        if (this.time.value != '0') {
+                                time = this.time.value;
+                                this.time.classList.remove('error');
+                                this.time.classList.add('data');
+                        } else {
 
-				newDelete.setAttribute('class', 'for-delete');
+                                errors.push(this.time.id);
+                                this.time.classList.add('error');
+                                this.time.classList.remove('data');
+                        }
 
-				newDelete.appendChild(cancel);
-				newSubmit.appendChild(proceed);
+                        var people = "";
+                        if (this.people.value != '0') {
 
-				var text = '<h3>' + this.first.value + ' ' + this.last.value + '</h3>\n\t\t\t\t<h4>' + this.phone.value + '</h4>\n\t\t\t\t<h4>' + this.email.value + '</h4>\n\t\t\t\t<p>' + this.date.value + '</p>\n\t\t\t\t<p>' + this.people.value + ' people</p>\n\t\t\t\t<p>' + this.time.value + '</p>';
+                                people = this.people.value;
+                                this.people.classList.remove('error');
+                                this.people.classList.add('data');
+                        } else {
 
-				newDiv.innerHTML = text;
-				newDiv.appendChild(newDelete);
-				newDiv.appendChild(newSubmit);
+                                errors.push(this.people.id);
+                                this.people.classList.add('error');
+                                this.people.classList.remove('data');
+                        }
 
-				document.getElementById('orders').appendChild(newDiv);
+                        console.log(errors);
 
-				var forDelete = document.querySelectorAll('.for-delete');
-				forDelete.forEach(function (element) {
-					element.addEventListener('click', _this.removeReservation);
-				});
-			}
-		}
-	}, {
-		key: 'removeReservation',
-		value: function removeReservation() {
+                        if (errors.length == 0) {
+                                this.createReservation();
+                        }
+                }
+        }, {
+                key: 'createReservation',
+                value: function createReservation() {
+                        var _this = this;
 
-			this.parentNode.remove();
-		}
-	}, {
-		key: '_addListeners',
-		value: function _addListeners() {
+                        var divs = document.querySelectorAll('.order');
 
-			if (this.buttons) {
-				this.buttons.addEventListener('click', this.createReservation.bind(this));
-			}
-		}
-	}]);
+                        if (divs.length > 0) {
 
-	return Reservation;
+                                alert("Please confirm your reservation below or cancel it so you can make another one");
+                        } else {
+
+                                var newDiv = document.createElement('div');
+                                newDiv.setAttribute('class', 'order');
+
+                                var newSubmit = document.createElement('button');
+                                var newDelete = document.createElement('button');
+
+                                var cancel = document.createTextNode('Cancel');
+                                var proceed = document.createTextNode('Proceed');
+
+                                newDelete.setAttribute('class', 'for-delete');
+
+                                newDelete.appendChild(cancel);
+                                newSubmit.appendChild(proceed);
+
+                                var text = '<h3>' + this.first.value + ' ' + this.last.value + '</h3>\n\t\t\t\t\t<p>' + this.date.value + '</p>\n\t\t\t\t\t<p>' + this.people.value + ' people</p>\n\t\t\t\t\t<p>' + this.time.value + '</p>';
+
+                                newDiv.innerHTML = text;
+                                newDiv.appendChild(newDelete);
+                                newDiv.appendChild(newSubmit);
+
+                                document.getElementById('orders').appendChild(newDiv);
+
+                                var forDelete = document.querySelectorAll('.for-delete');
+                                forDelete.forEach(function (element) {
+                                        element.addEventListener('click', _this.removeReservation);
+                                });
+                        }
+                }
+        }, {
+                key: 'removeReservation',
+                value: function removeReservation() {
+
+                        this.parentNode.remove();
+                }
+        }, {
+                key: '_addListeners',
+                value: function _addListeners() {
+
+                        if (this.buttons) {
+
+                                //this.buttons.addEventListener('click',this.createReservation.bind(this));
+                                this.buttons.addEventListener('click', this.validation.bind(this));
+                        }
+                }
+        }]);
+
+        return Reservation;
 }();
 
 exports.default = new Reservation();
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.slider = slider;
-var slideCount = exports.slideCount = 0;
-
-function slider() {
-  var slides = document.getElementsByClassName("slider-img");
-
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  exports.slideCount = slideCount += 1;
-
-  if (slideCount > slides.length) {
-    exports.slideCount = slideCount = 1;
-  }
-
-  slides[slideCount - 1].style.display = "block";
-  setTimeout(slider, 4000);
-}
-
-/***/ }),
+/* 2 */,
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -505,6 +417,86 @@ var Form = function () {
 }();
 
 exports.default = new Form();
+
+/***/ }),
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = request;
+function request(url, f, typeOfFood) {
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200) {
+            f(this, typeOfFood);
+        }
+    };
+
+    xhttp.open("GET", url);
+    xhttp.responseType = 'text';
+    xhttp.send();
+}
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getMenu;
+function getMenu(xml, type) {
+  var obj = JSON.parse(xml.responseText);
+  var number = void 0;
+  var text = "";
+
+  (function () {
+    var gold = document.getElementById("gold");
+    while (gold.hasChildNodes()) {
+      gold.removeChild(gold.firstChild);
+    }
+  })();
+
+  (function () {
+    var heading = document.createElement('h1');
+    var headingText = document.createTextNode(type);
+    heading.appendChild(headingText);
+    var gold = document.createElement('img');
+    gold.setAttribute('src', 'images/other/gold.png');
+    document.getElementById('gold').appendChild(heading);
+    document.getElementById('gold').appendChild(gold);
+  })();
+
+  if (type == "DINNER") {
+    number = 0;
+    text = "";
+  } else if (type == 'LUNCH') {
+    number = 1;
+    text = "";
+  } else if (type == 'CATERING') {
+    number = 2;
+    text = "";
+  }
+  for (var i = 0; i < obj[number][type].length; i++) {
+    var name = obj[number][type][i].name;
+    var desc = obj[number][type][i].desc;
+    text += "<div class='recipe'><h4>" + name + "</h4><p>" + desc + "</p></div>";
+    document.getElementById('recipes').innerHTML = text;
+  }
+}
 
 /***/ })
 /******/ ]);
