@@ -323,14 +323,17 @@ section {
 }
 
 .order {
-	width: 50%;
     margin: 0 auto;
     margin-top: 30px;
 	border:1px solid black;
 }
 
-.order button {
-	float:right;
+.error {
+	border-color: red;
+}
+
+.data {
+	border-color: green;
 }
 
 #map {
