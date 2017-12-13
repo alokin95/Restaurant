@@ -30,8 +30,9 @@ function localStorageClicked(value){
 }
 /*KRAJ*/
 
-window.addEventListener('load', slider);
+//window.addEventListener('load', slider);
 window.addEventListener('scroll', scrollHeader);
+window.addEventListener('load', initMap);
 //HEADER SCROLL FUNKCJA
 function scrollHeader() {
 	
@@ -77,6 +78,21 @@ function slider() {
   setTimeout(slider, 4000);
 }
 /*KRAJ*/
+
+/*GOOGLE MAP
+function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+
+KRAJ*/
 
 document.querySelector("#btnDinner").addEventListener('click',function(){
   localStorage.setItem('type','DINNER');
