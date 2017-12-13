@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="icon" href="images/other/icon.png">
     <link href="https://fonts.googleapis.com/css?family=Buda:300" rel='stylesheet'>
@@ -44,7 +43,6 @@
             <ul class='nav-links'>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About</a></li>
             </ul>
             <div class="info">
                 <span style="font-weight:bold;">PHONE:</span> 704-385-1562<br/>
@@ -253,12 +251,18 @@
                 </form>
                 <button id="submit">Make a reservation</button>
             </div>
-            <div id="orders">
+            <div>
+				<form id="orders">
+				</form>
             </div>
         </section>
 
     <section id="map">
-
+		<iframe
+		  frameborder="0" style="border:0"
+		  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB3Wmi8_2RUKbOYxEnGF3AwZJTG-9c0bjQ&q=Italian+Kitchen">
+		</iframe>
+		 
     </section>
 
     </main>
@@ -271,12 +275,14 @@
             </div>
         <p>&copy; 2017 By Restaurant Concordia Sagittaria All rights reserved</p>
     </footer>
-
     <script src="src/jquery.min.js"></script>
     <script src="dist/main.js"></script>
   </script>
     <script src="lightbox\lightbox2-master\dist\js\lightbox.js"></script>
-
+	<!--
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHKIn9P8ZbHI7_OZewPbZy0iRWtPvCIdM&callback=initMap">
+    </script>-->
 </body>
 
 </html>
